@@ -31,10 +31,12 @@ class DropModel:
         rospy.loginfo("Spawn_model: " + model_name)
 
         # 物体の種類を決める
-        o = random.randint(0, len(objects)-1)
+        #o = random.randint(0, len(objects)-1)
+        o = 2
 
         # 物体の位置を決める
-        p = random.randint(0, len(places)-1)
+        #p = random.randint(0, len(places)-1)
+        p = 0
 
         self.initial_pose = Pose()
         self.initial_pose.position.x = places[p][0]
