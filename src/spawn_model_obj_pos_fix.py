@@ -26,13 +26,14 @@ class ActorModel:
     # @staticmethod
     def spawn_model(self, model_name):
         rospy.loginfo("Spawn_model: " + model_name)
+        # bedroom, pig_doll
         self.initial_pose = Pose()
-        self.initial_pose.position.x = 2.0
-        self.initial_pose.position.y = 0.0
+        self.initial_pose.position.x = -3.0
+        self.initial_pose.position.y = -1.6
         self.initial_pose.position.z = 0.0
 
         # Spawn the new model #
-        self.model_path = rospkg.RosPack().get_path('nrp_gazebo_worlds')+'/models/3rd_generic_toy_doll_penguin/'
+        self.model_path = rospkg.RosPack().get_path('nrp_gazebo_worlds')+'/models/3rd_generic_toy_doll_pig/'
         self.model_xml = ''
         rospy.loginfo(model_name)
         rospy.loginfo(self.model_path)
