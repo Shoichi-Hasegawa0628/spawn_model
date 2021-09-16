@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# gazebo world上にランダムに指定した位置に物体を配置するコード
+# gazebo world上に指定した物体をランダムな位置に配置するコード
 
 #import sys
 import rospy

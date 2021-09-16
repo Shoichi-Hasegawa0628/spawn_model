@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# gazebo world上に指定した位置に4つ物体を配置するコード
+# gazebo world上に指定した位置に指定した4つ物体を配置するコード
 
 #import sys
 import rospy

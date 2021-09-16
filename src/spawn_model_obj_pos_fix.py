@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# gazebo world上に指定した位置に物体を配置するコード
+# gazebo world上に指定した位置に指定した物体を配置するコード
 
 import sys
 import rospy
@@ -8,7 +8,9 @@ import rospkg
 from gazebo_msgs.srv import DeleteModel
 from gazebo_msgs.srv import SpawnModel
 #from std_msgs.msg import Header, Float64, Bool, String, Int16
-from geometry_msgs.msg import Pose
+from geometry_msgs.msg import Pose, Quaternion
+import tf.transformations as tft
+from __init__ import *
 import argparse
 
 class ActorModel:
@@ -26,11 +28,18 @@ class ActorModel:
     # @staticmethod
     def spawn_model(self, model_name):
         rospy.loginfo("Spawn_model: " + model_name)
-        # bedroom, pig_doll
+        # kiotchen, orange_cup
+        p = 2
         self.initial_pose = Pose()
-        self.initial_pose.position.x = -3.0
-        self.initial_pose.position.y = -1.6
-        self.initial_pose.position.z = 0.0
+        self.initial_pose_0.position.x = places[p][0]
+        self.initial_pose_0.position.y = places[p][1]
+        self.initial_pose_0.position.z = places[p][2]
+        roll = places[p][3]
+        pitch = places[p][4]
+        yaw = places[p][5]
+        tmpq = tft.quaternion_from_euler(roll, pitch, yaw)
+        q = Quaternion(tmpq[0], tmpq[1], tmpq[2], tmpq[3])
+        self.initial_pose.orientation = q
 
         # Spawn the new model #
         self.model_path = rospkg.RosPack().get_path('nrp_gazebo_worlds')+'/models/3rd_generic_toy_doll_pig/'

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# gazebo world上にランダムに指定した位置に物体を配置するコード
+# gazebo world上にランダムな位置にランダムに物体を配置するコード
 
 #import sys
 import rospy
@@ -32,11 +32,9 @@ class DropModel:
 
         # 物体の種類を決める
         o = random.randint(0, len(objects)-1)
-        #o = 2
 
         # 物体の位置を決める
         p = random.randint(0, len(places)-1)
-        #p = 0
 
         self.initial_pose = Pose()
         self.initial_pose.position.x = places[p][0]
