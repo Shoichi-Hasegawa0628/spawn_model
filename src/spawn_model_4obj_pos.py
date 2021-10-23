@@ -49,8 +49,7 @@ class DropModel:
         self.initial_pose_0.orientation = q
 
         # Spawn the new model #
-        self.model_path = rospkg.RosPack().get_path('nrp_gazebo_worlds')+'/models/{}/'.format(obje
-        cts[o])
+        self.model_path = rospkg.RosPack().get_path('nrp_gazebo_worlds')+'/models/{}/'.format(objects[o])
         self.model_xml = ''
         rospy.loginfo(model_name)
         rospy.loginfo(self.model_path)

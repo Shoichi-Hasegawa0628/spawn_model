@@ -31,9 +31,9 @@ class ActorModel:
         # kiotchen, orange_cup
         p = 2
         self.initial_pose = Pose()
-        self.initial_pose_0.position.x = places[p][0]
-        self.initial_pose_0.position.y = places[p][1]
-        self.initial_pose_0.position.z = places[p][2]
+        self.initial_pose.position.x = places[p][0]
+        self.initial_pose.position.y = places[p][1]
+        self.initial_pose.position.z = places[p][2]
         roll = places[p][3]
         pitch = places[p][4]
         yaw = places[p][5]

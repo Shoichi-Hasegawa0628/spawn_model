@@ -3,7 +3,6 @@
 
 ## 物体の種類のPATH
 # doll
-
 penguin = "3rd_generic_toy_doll_penguin"
 sheep = "3rd_generic_toy_doll_sheep"
 pig = "3rd_generic_toy_doll_pig"
