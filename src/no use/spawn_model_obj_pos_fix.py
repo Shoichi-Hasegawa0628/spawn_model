@@ -29,20 +29,20 @@ class ActorModel:
     def spawn_model(self, model_name):
         rospy.loginfo("Spawn_model: " + model_name)
         # kiotchen, orange_cup
-        p = 2
+        #p = 2
         self.initial_pose = Pose()
-        self.initial_pose.position.x = places[p][0]
-        self.initial_pose.position.y = places[p][1]
-        self.initial_pose.position.z = places[p][2]
-        roll = places[p][3]
-        pitch = places[p][4]
-        yaw = places[p][5]
+        self.initial_pose.position.x = 1.4
+        self.initial_pose.position.y = -0.0
+        self.initial_pose.position.z = 1.0
+        roll = -0.0
+        pitch = 0.0
+        yaw = 0.0
         tmpq = tft.quaternion_from_euler(roll, pitch, yaw)
         q = Quaternion(tmpq[0], tmpq[1], tmpq[2], tmpq[3])
         self.initial_pose.orientation = q
 
         # Spawn the new model #
-        self.model_path = rospkg.RosPack().get_path('nrp_gazebo_worlds')+'/models/3rd_generic_toy_doll_pig/'
+        self.model_path = rospkg.RosPack().get_path('tmc_gazebo_worlds')+'/models/wheel_duck/'
         self.model_xml = ''
         rospy.loginfo(model_name)
         rospy.loginfo(self.model_path)
