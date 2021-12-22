@@ -45,6 +45,13 @@ bath_slipper = "ir_bath_slipper"
 objects = [plate, bowl, pitcher_base, banana, apple, orange, cracker_box, pudding_box, chips_bag, coffee, muscat,
            fruits_juice, penguin_doll, sheep_doll, pig_doll, airplane_toy, car_toy, truck_toy, tooth_paste, towel, cup,
            treatments, body_sponge, bath_slipper]
+###############################################
+# target place
+living_target = [-0.114105, -0.078607, 3.0, -0.000759, 0.000129, 0.133706]
+kitchen_target = [0.875938, -2.357945, 3.0, -0.000760, -0.000233, -0.296452]
+bedroom_target = [-2.760358, -0.389499, 3.0, -0.000128, -0.000918, -1.496207]
+bathroom_target = [-1.062587, 3.753711, 3.0, 0.000826, -0.000479, -2.729761]
+places_target = [living_target, kitchen_target, bedroom_target, bathroom_target]
 
 ###############################################
 ## 物体の位置の座標 (plate)
