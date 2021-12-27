@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # gazebo world上に指定した位置に物体を配置するコード (Frontiers2021のシナリオ3)
-
+import random
 import sys
 import numpy as np
 import rospy
@@ -27,13 +27,19 @@ class SpawnManyModel:
             self.delete_model_prox("training_model_{}".format(index))
 
     def spawn_model(self, model_name):
-        for index in range(24):
+        for index in range(20):
             # 配置する物体の種類を決める
             o = index
 
             # 配置する場所を決める
-            s = np.random.choice([0, 1, 2, 3], p=prob[o])
-            # living, kitchen, bedroom, bathroom
+            max_prob = max(prob[o])
+            if prob[o].count(max_prob) > 1:
+                indexes = [i for i, e in enumerate(prob[o]) if e == max_prob]
+                s = random.choice(indexes)
+
+            else:
+                s = prob[o].index(max_prob)
+
             self.initial_pose = Pose()
             self.initial_pose.position.x = places[o][s][0]
             self.initial_pose.position.y = places[o][s][1]

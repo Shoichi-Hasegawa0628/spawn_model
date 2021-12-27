@@ -32,7 +32,7 @@ class SpawnManyModel:
             o = index
 
             # 配置する場所を決める
-            s = np.random.choice([0, 1, 2, 3], p=prob[o])
+            s = Location_3_1[index]
             # living, kitchen, bedroom, bathroom
             self.initial_pose = Pose()
             self.initial_pose.position.x = places[o][s][0]
