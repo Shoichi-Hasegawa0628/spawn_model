@@ -27,7 +27,7 @@ class SpawnManyModel:
             self.delete_model_prox("training_model_{}".format(index))
 
     def spawn_model(self, model_name):
-        for index in range(20):
+        for index in range(24):
             # 配置する物体の種類を決める
             o = index
 
