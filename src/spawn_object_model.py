@@ -1,19 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# gazebo world上に指定した位置に物体を配置するコード (Frontiers2021のシナリオ3)
-import random
-import sys
-import numpy as np
+
 import rospy
 import rospkg
 from gazebo_msgs.srv import DeleteModel
 from gazebo_msgs.srv import SpawnModel
-# from std_msgs.msg import Header, Float64, Bool, String, Int16
 from geometry_msgs.msg import Pose, Quaternion
 import tf.transformations as tft
 from gazebo_ros import gazebo_interface
+import random
 from __init__ import *
-import argparse
 
 
 class SpawnManyModel:
@@ -22,23 +18,17 @@ class SpawnManyModel:
 
     def all_delete_model(self):
         rospy.loginfo("All Delete: ")
-        for index in range(24):
+        for index in range(len(objects)):
             self.delete_model_prox = rospy.ServiceProxy('gazebo/delete_model', DeleteModel)
             self.delete_model_prox("training_model_{}".format(index))
 
     def spawn_model(self, model_name):
-        for index in range(24):
+        for index in range(len(objects)):
             # 配置する物体の種類を決める
             o = index
 
-            # 配置する場所を決める
-            max_prob = max(prob[o])
-            if prob[o].count(max_prob) > 1:
-                indexes = [i for i, e in enumerate(prob[o]) if e == max_prob]
-                s = random.choice(indexes)
-
-            else:
-                s = prob[o].index(max_prob)
+            # 配置する場所をランダムに決める
+            s = random.randint(0, len(places)-1)
 
             self.initial_pose = Pose()
             self.initial_pose.position.x = places[o][s][0]
@@ -52,7 +42,7 @@ class SpawnManyModel:
             self.initial_pose.orientation = q
 
             # Spawn the new model #
-            self.model_path = rospkg.RosPack().get_path('frontiers2021_gazebo_worlds') + '/models/{}/'.format(
+            self.model_path = rospkg.RosPack().get_path(PATH) + '/models/{}/'.format(
                 objects[o])
             self.model_xml = ''
             rospy.loginfo(model_name)
@@ -82,4 +72,3 @@ if __name__ == '__main__':
             spawn_many_model.all_delete_model()
             break
         print("The command is different, please enter the correct command.\n")
-

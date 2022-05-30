@@ -6,32 +6,35 @@ This repository is arrangement of objects on Gazebo.
 
 **Content:**
 
-*   [Setup](#Setup)
-*   [Launch](#launch)
+*   [Preparation](#preparation)
+*   [Execution](#execution)
 *   [Files](#files)
 *   [References](#References)
 
 
-## Setup
+## Preparation
+You need to set parameter and filepath, etc in `__init__.py`.
+The following are the items to set.
+
+* Object file path
+* Object file name
+* Object list
+* Target place name, position (you need to check the position which show placement of objects.)
 
 
-## Launch
-roslaunch spawn_model spawn_model_default.launch
+## Execution
+`roslaunch spawn_model spawn_model_default.launch`
+
+"Please input word: spawn or delete" will appear on the terminal,  
+so enter "spawn" to place it and "delete" to delete it.
 
 ## Files
  - `README.md`: Read me file (This file)
 
- - `spawn_model_default.launch`:
-
- - `spawn_model_4obj_pos.py`: 
-
- - `spawn_model_obj_pos_fix.py`:  
-
- - `spawn_model_obj_pos_random.py`:  
-
- - `spawn_model_pos_fix.py`: 
+ - `spawn_model_default.launch`
+ 
+ - `spawn_object_model.py`
 
  - `__init__.py`: Code for initial setting (PATH and parameters)
-
-## References
+ 
 
