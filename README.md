@@ -1,4 +1,4 @@
-# 'spawn_model' Package
+# spawn_model 
 This repository is arrangement of objects on Gazebo.
 
 *   Maintainer: Shoichi Hasegawa ([hasegawa.shoichi@em.ci.ritsumei.ac.jp](mailto:hasegawa.shoichi@em.ci.ritsumei.ac.jp)).
