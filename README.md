@@ -7,12 +7,17 @@ This repository is arrangement of objects on Gazebo.
 **Content:**
 
 *   [Setup](#Setup)
+*   [Execution](#execution)
 *   [Launch](#launch)
 *   [Files](#files)
 *   [References](#References)
 
 
 ## Setup
+numpy => 1.19.5
+
+## Execution
+
 
 
 ## Launch
