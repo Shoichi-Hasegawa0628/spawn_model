@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<launch>
-    <node name="spawn_model_dict" pkg="spawn_model" type="spawn_object_by_dict.py" output="screen" cwd="node" />
-</launch>

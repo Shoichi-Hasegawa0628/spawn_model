@@ -9,12 +9,14 @@ PATH = "tmc_gazebo_worlds"
 ## Object file name
 
 apple = "ycb_013_apple"
-orange = "ycb_017_orange"
+# orange = "ycb_017_orange"
+master_chef = "ycb_002_master_chef_can"
 rubiks_cube = 'ycb_077_rubiks_cube'
 
 
+
+banana = 'ycb_011_banana'
 pudding_box = "ycb_008_pudding_box"
-master_chef = "ycb_002_master_chef_can"
 tomato_soup_can = 'ycb_005_tomato_soup_can'
 
 
@@ -27,7 +29,7 @@ cup = "ycb_025_mug"
 
 ###################################################
 ## Object list
-objects = [rubiks_cube, apple, orange, pudding_box, master_chef, tomato_soup_can, cup, tennis_ball, potted_meat_can]
+objects = [rubiks_cube, apple, master_chef, pudding_box, banana, tomato_soup_can, cup, tennis_ball, potted_meat_can]
 
 ###################################################
 # Target place name, position.
@@ -44,8 +46,8 @@ place1 = [1.187147, -0.196535, 0.400285, -0.004988, -0.008848, -1.435205]
 place2 = [1.110886, 1.009600, 0.627735, 0.00, 0.00, -1.559631]
 place3 = [-1.082676, -0.684636, 0.407281, 0.030775, -0.005525, 1.537958]
 
-object_place_dict = {"ycb_013_apple": place1, "ycb_017_orange": place1, 'ycb_077_rubiks_cube':place1,
-                     "ycb_008_pudding_box": place2, "ycb_002_master_chef_can": place2, 'ycb_005_tomato_soup_can': place2,
+object_place_dict = {"ycb_013_apple": place1, "ycb_002_master_chef_can": place1, 'ycb_077_rubiks_cube':place1,
+                     "ycb_008_pudding_box": place2, "ycb_011_banana": place2, 'ycb_005_tomato_soup_can': place2,
                      'ycb_056_tennis_ball': place3, 'ycb_010_potted_meat_can': place3, "ycb_025_mug": place3}
 
 # places = [banana_place, apple_place, orange_place, pudding_box_place, cup_palce,
