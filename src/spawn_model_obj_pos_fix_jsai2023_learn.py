@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # gazebo world上に指定した位置に物体を配置するコード (Frontiers2021のシナリオ3)
-
+import random
 import sys
 import numpy as np
 import rospy
@@ -32,22 +32,20 @@ class SpawnManyModel:
             o = index
 
             # 配置する場所を決める
-            s = Location_3_1[index]
-            # living, kitchen, bedroom, bathroom
             self.initial_pose = Pose()
-            self.initial_pose.position.x = places[o][s][0]
-            self.initial_pose.position.y = places[o][s][1]
-            self.initial_pose.position.z = places[o][s][2]
-            roll = places[o][s][3]
-            pitch = places[o][s][4]
-            yaw = places[o][s][5]
+            self.initial_pose.position.x = jsai2023_obj_pose[o][0]
+            self.initial_pose.position.y = jsai2023_obj_pose[o][1]
+            self.initial_pose.position.z = jsai2023_obj_pose[o][2]
+            roll = jsai2023_obj_pose[o][3]
+            pitch = jsai2023_obj_pose[o][4]
+            yaw = jsai2023_obj_pose[o][5]
             tmpq = tft.quaternion_from_euler(roll, pitch, yaw)
             q = Quaternion(tmpq[0], tmpq[1], tmpq[2], tmpq[3])
             self.initial_pose.orientation = q
 
             # Spawn the new model #
             self.model_path = rospkg.RosPack().get_path('frontiers2021_gazebo_worlds') + '/models/{}/'.format(
-                objects[o])
+                jsai2023_objects[o])
             self.model_xml = ''
             rospy.loginfo(model_name)
             rospy.loginfo(self.model_path)

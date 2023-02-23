@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+###################################################################################################################
+# JSAI2022
 
 ## 物体の種類のPATH
 # Tableware
@@ -298,7 +300,7 @@ Location_3_1 = [1, 0, 1, 0,
 #           penguin_doll, sheep_doll, pig_doll, airplane_toy, car_toy, truck_toy,
 #           tooth_paste, towel, cup, treatments, body_sponge, bath_slipper]
 
-
+###################################################################################################################
 ## 実験2 (SII2023)
 exp2_obj_pose = [[1.59, -3.21, 0.73, 0.0, 0.0, -2.45],
                  [2.70, -3.42, 0.72, 0.0, 0.0, 0.0],
@@ -329,9 +331,37 @@ exp2_obj_pose = [[1.59, -3.21, 0.73, 0.0, 0.0, -2.45],
                  [-2.89, 3.66, 0.0, 0.0, 0.0, -3.0]
                  ]
 
+###################################################################################################################
+# JSAI2023 (学習時のみ)
+#
+# objects = [plate, bowl, pitcher_base, banana, apple, orange, cracker_box, pudding_box, chips_bag, coffee, muscat,
+#            fruits_juice, penguin_doll, sheep_doll, pig_doll, airplane_toy, car_toy, truck_toy, tooth_paste, towel, cup,
+#            treatments, body_sponge, bath_slipper]
 
+jsai2023_objects = [plate, bowl, pitcher_base, cracker_box,
+                    pudding_box, chips_bag, coffee, muscat,
+                    fruits_juice, penguin_doll, sheep_doll, pig_doll,
+                    treatments, body_sponge, bath_slipper]
 
+jsai2023_obj_pose = [[1.59, -3.21, 0.73, 0.0, 0.0, -2.45],
+                 [2.70, -3.42, 0.72, 0.0, 0.0, 0.0],
+                 [4.68, -2.73, 0.88, 0.0, 0.0, 0.0],
 
+                 [3.40, 1.61, 0.42, -0.05, -0.74, -1.71],
+                 [2.82, 0.75, 0.44, 0.0, 0.0, 0.3],
+                 [2.67, 0.35, 0.44, 0.0, 1.38, 0.0],
+                 [3.33, 0.93, 0.41, 0.0, 0.0, 0.0],
+                 [2.66, -1.07, 0.35, 0.0, 0.0, 0.0],
+                 [2.21, 1.90, 0.52, 0.0, 0.0, 0.0],
+
+                 [-1.81, -3.17, 0.32, 0.0, 0.0, 1.64],
+                 [-4.7, -3.0, 0.74, 0.0, 0.0, 0.0],
+                 [-2.31, -1.58, 0.0, 0.0, 0.0, 0.0],
+
+                 [-1.2, 1.79, 0.84, 0.0, 0.0, -2.9],
+                 [-2.54, 2.24, 0.018, 0.027, 1.11, 0.99],
+                 [-2.89, 3.66, 0.0, 0.0, 0.0, -3.0]
+                 ]
 
 
 
